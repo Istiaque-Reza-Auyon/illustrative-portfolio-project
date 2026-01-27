@@ -5,12 +5,26 @@ import { Mail } from 'lucide-react';
 
 import Image from "next/image";
 import boy from "../../public/boy.svg"
+import boyAlt from "../../public/boyAlt.svg"
 
 type Props = {}
 
 function About({ }: Props) {
   return (
-    <div className='flex p-20'>
+    <div className='flex flex-col items-center lg:flex-row-reverse lg:items-start px-5 py-10'>
+      <div>
+        <div>
+          {/* Mobile version: Visible by default, hidden on Large screens */}
+          <div className="lg:hidden bg-red-700 ">
+            <Image src={boyAlt} alt="boy alternative" priority className='object-fill'/>
+          </div>
+
+          {/* Desktop version: Hidden by default, visible on Large screens */}
+          <div className="hidden lg:block">
+            <Image src={boy} alt="boy" priority />
+          </div>
+        </div>
+      </div>
       <div className='flex flex-col items-center justify-center w-[50vw] p-20'>
         <div className="font-sans text-5xl md:text-6xl leading-tight tracking-tight text-gray-900">
           <div className="font-sans text-5xl md:text-6xl leading-tight tracking-tight text-gray-900">
@@ -35,19 +49,11 @@ function About({ }: Props) {
         </div>
         <div className='flex gap-20'>
           <Github color='black' size={35} />
-          <Linkedin color='black' size={35}/>
-          <Twitter color='black' size={35}/>
+          <Linkedin color='black' size={35} />
+          <Twitter color='black' size={35} />
           <Mail color='black' size={35} />
         </div>
       </div>
-      <div>
-        <Image
-          src={boy}
-          alt="boy"
-          className="h-full"
-        />
-      </div>
-
     </div>
   )
 }
