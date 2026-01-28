@@ -12,17 +12,15 @@ type Props = {}
 function About({ }: Props) {
   return (
     <div className='flex flex-col items-center lg:flex-row-reverse lg:items-start px-5 py-10'>
-      <div>
-        <div>
-          {/* Mobile version: Visible by default, hidden on Large screens */}
-          <div className="lg:hidden bg-red-700 ">
-            <Image src={boyAlt} alt="boy alternative" priority className='object-fill'/>
-          </div>
+      <div className='w-full'>
+        {/* Mobile version: Visible by default, hidden on Large screens */}
+        <div className="lg:hidden">
+          <Image src={boyAlt} alt="boy alternative" priority className='w-full h-auto' />
+        </div>
 
-          {/* Desktop version: Hidden by default, visible on Large screens */}
-          <div className="hidden lg:block">
-            <Image src={boy} alt="boy" priority />
-          </div>
+        {/* Desktop version: Hidden by default, visible on Large screens */}
+        <div className="hidden lg:block">
+          <Image src={boy} alt="boy" priority className='w-full h-auto object-cover' />
         </div>
       </div>
       <div className='flex flex-col items-center justify-center w-[50vw] p-20'>
