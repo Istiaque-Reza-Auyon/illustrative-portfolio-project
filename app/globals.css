@@ -28,4 +28,24 @@ body {
 @theme {
   --breakpoint-3xl: 120rem;
   --breakpoint-4xl: 145rem;
+  --text-down--200: clamp(1.0417rem, 0.6341rem + 1.8116vw, 2.0833rem);
+  --text--100: clamp(1.25rem, 0.7609rem + 2.1739vw, 2.5rem);
+  --text-base: clamp(1.5rem, 0.913rem + 2.6087vw, 3rem);
+  --text-100: clamp(1.8rem, 1.0957rem + 3.1304vw, 3.6rem);
+  --text-200: clamp(2.16rem, 1.3148rem + 3.7565vw, 4.32rem);
+  --text-300: clamp(2.592rem, 1.5777rem + 4.5078vw, 5.184rem);
+  --text-400: clamp(3.1104rem, 1.8933rem + 5.4094vw, 6.2208rem);
+  --text-500: clamp(3.7325rem, 2.2719rem + 6.4913vw, 7.465rem);
+}
+
+@utility stroke-0 {
+  -webkit-text-stroke: 2px #111827;
+}
+
+@utility stroke-1 {
+  -webkit-text-stroke: 1.1px #111827;
+}
+
+@utility text-* {
+ font-size: --value(--text-*)
 }
