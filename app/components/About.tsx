@@ -43,11 +43,11 @@ function About({ }: Props) {
           I'm Istiaque Reza Auyon Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to specimen book.
         </div>
         <div className='flex w-full justify-center'>
-          <div className='flex flex-wrap gap-20 p-10'>
-            <Github color='black' size={35} />
-            <Linkedin color='black' size={35} />
-            <Twitter color='black' size={35} />
-            <Mail color='black' size={35} />
+          <div className='flex flex-wrap gap-x-20 gap-y-10 p-10'> 
+            <button className=' cursor-pointer hover:opacity-70 transition-opacity'><Github color='black' size={35} /></button>
+            <button className=' cursor-pointer hover:opacity-70 transition-opacity'><Linkedin color='black' size={35} /></button>
+            <button className=' cursor-pointer hover:opacity-70 transition-opacity'><Twitter color='black' size={35} /></button>
+            <button className=' cursor-pointer hover:opacity-70 transition-opacity'><Mail color='black' size={35} /></button>
           </div>
         </div>
       </div>

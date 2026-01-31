@@ -5,9 +5,11 @@ import Image from 'next/image';
 import logo from '../../public/logo.svg';
 import download from '../../public/download.svg';
 
-type Props = {}
+type Props = {
+    scrollToSection: () => void;
+}
 
-function Header({ }: Props) {
+function Header({scrollToSection }: Props) {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
@@ -25,7 +27,7 @@ function Header({ }: Props) {
                 {/* Desktop Navigation */}
                 <nav className='hidden lg:flex gap-8 xl:gap-12 2xl:gap-16 3xl:gap-20 4xl:gap-24'>
                     {['About Me', 'Skills', 'Project', 'Contact Me'].map((item) => (
-                        <button key={item} className='text-black text-lg xl:text-xl 3xl:text-2xl 4xl:text-3xl font-bold cursor-pointer hover:opacity-70 transition-opacity'>
+                        <button onClick={scrollToSection}  key={item} className='text-black text-lg xl:text-xl 3xl:text-2xl 4xl:text-3xl font-bold cursor-pointer hover:opacity-70 transition-opacity'>
                             {item}
                         </button>
                     ))}
