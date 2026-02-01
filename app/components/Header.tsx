@@ -6,7 +6,7 @@ import logo from '../../public/logo.svg';
 import download from '../../public/download.svg';
 
 type Props = {
-    scrollToSection: () => void;
+    scrollToSection: (section: string) => void;
 }
 
 function Header({scrollToSection }: Props) {
@@ -26,8 +26,8 @@ function Header({scrollToSection }: Props) {
 
                 {/* Desktop Navigation */}
                 <nav className='hidden lg:flex gap-8 xl:gap-12 2xl:gap-16 3xl:gap-20 4xl:gap-24'>
-                    {['About Me', 'Skills', 'Project', 'Contact Me'].map((item) => (
-                        <button onClick={scrollToSection}  key={item} className='text-black text-lg xl:text-xl 3xl:text-2xl 4xl:text-3xl font-bold cursor-pointer hover:opacity-70 transition-opacity'>
+                    {['About Me', 'Skills', 'Experience', 'Project', 'Contact Me'].map((item) => (
+                        <button onClick={() => scrollToSection(item)}  key={item} className='text-black text-lg xl:text-xl 3xl:text-2xl 4xl:text-3xl font-bold cursor-pointer hover:opacity-70 transition-opacity'>
                             {item}
                         </button>
                     ))}
@@ -55,8 +55,8 @@ function Header({scrollToSection }: Props) {
             {/* Mobile Menu Dropdown */}
             {isOpen && (
                 <div className='lg:hidden bg-white border-t border-gray-100 flex flex-col p-6 gap-6 shadow-lg'>
-                    {['About Me', 'Skills', 'Project', 'Contact Me'].map((item) => (
-                        <button key={item} className='text-black text-xl md:text-2xl font-bold text-left'>
+                    {['About Me', 'Skills','Experience', 'Project', 'Contact Me'].map((item) => (
+                        <button onClick={() => scrollToSection(item)} key={item} className='text-black text-xl md:text-2xl font-bold text-left'>
                             {item}
                         </button>
                     ))}

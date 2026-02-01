@@ -6,17 +6,19 @@ import Image from "next/image";
 import boy from "../public/boy.svg"
 import Experience from "./components/Experience";
 import React, { useRef } from 'react';
+import Skills from "./components/Skills";
 
 export default function Home() {
   // 1. Create a ref for the target section
-  const contactSection = useRef<HTMLDivElement>(null);
+  const contactExperience = useRef<HTMLDivElement>(null);
+  const contactSkills = useRef<HTMLDivElement>(null);
 
-  const scrollToSection = () => {
-    // 2. Use the scrollIntoView API
-    contactSection.current?.scrollIntoView({ 
-      behavior: 'smooth', 
-      block: 'start' 
-    });
+  const scrollToSection = (section: string) => {
+    if (section === 'Skills' && contactSkills.current) {
+      contactSkills.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else if (section === 'Experience' && contactExperience.current) {
+      contactExperience.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   };
 
 
@@ -24,7 +26,8 @@ export default function Home() {
     <div className='bg-white h-screen overflow-auto'>
       <Header scrollToSection={scrollToSection}/>
       <About />
-      <Experience ref={contactSection} />
+      <Skills ref={contactSkills} />
+      <Experience ref={contactExperience} />
     </div>
   );
 }
